@@ -23,7 +23,8 @@
 
 ## Assumptions
 
--   Each order consists of at most one drink ordered by every person (number of drinks incremented by one each time)
+-   Each order consists of at most one drink ordered by every person
+-   Number of drinks incremented by one each time for everyone for each order
 -   Coffee prices don't go over $1000
 
 ## Logic
