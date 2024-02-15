@@ -7,10 +7,11 @@
 -   Vite
 -   TailwindCSS
 
-## Assumptions
-
--   Each order consists of at most one drink ordered by every person (number of drinks incremented by one each time)
--   Coffee prices don't go over $1000
+## How to run locally
+- Run: ```git clone https://github.com/brandonysli/coding-challenge.git```
+- Then move into the directory: ```cd coding-challenge```
+- Install dependencies: ```yarn install```
+- Start server: ```yarn dev```
 
 ## Input / Instructions
 
@@ -18,6 +19,11 @@
 -   Make an order and specify how much each person's coffee costs by clicking the Add Order button
 -   Look at Next Payer and Amount to determine the person to pay for this order and the cost
 -   Click Pay for Order when the order is paid
+
+## Assumptions
+
+-   Each order consists of at most one drink ordered by every person (number of drinks incremented by one each time)
+-   Coffee prices don't go over $1000
 
 ## Logic
 
