@@ -18,10 +18,14 @@ const AddOrderPage = () => {
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		expenses.forEach(({ name, expense }: ExpenseInput) => {
-			addExpense(name, expense);
+			if (expense > 0) {
+				addExpense(name, expense);
+			}
 		});
 		// add the total cost of order
-		addOrder(expenses.reduce((acc, curr) => acc + curr.expense, 0));
+		const cost = expenses.reduce((acc, curr) => acc + curr.expense, 0);
+		if (cost > 0) addOrder(cost);
+
 		// reset expenses
 		navigate("/");
 	};

@@ -23,8 +23,9 @@
 
 ## Assumptions
 
--   Each order consists of at most one drink ordered by every person
--   Number of drinks incremented by one each time for everyone for each order
+-   Zero cost orders are allowed, which means someone decided not to buy anything
+-   Each person can only buy up to one drink during an order
+-   Coffee prices aren't abnormally different - don't need to introduce any complicated weighting system accounting for outlier orders
 -   Coffee prices don't go over $1000
 
 ## Logic

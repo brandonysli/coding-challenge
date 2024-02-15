@@ -117,15 +117,9 @@ export const CoworkersProvider = ({ children }: CoworkersProviderProps) => {
 	const determineNextPayer = () => {
 		// calculate score for each coworker
 		const scores = coworkers!.map((coworker: Coworker) => {
-			const averageCostPerDrink =
-				coworker.drinksPurchased > 0
-					? coworker.totalCostOfDrinks / coworker.drinksPurchased
-					: 0;
 			return {
 				name: coworker.name,
-				score:
-					coworker.totalPaid -
-					averageCostPerDrink * coworker.drinksPurchased,
+				score: coworker.totalPaid - coworker.totalCostOfDrinks,
 			};
 		});
 
