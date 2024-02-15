@@ -1,30 +1,25 @@
-# React + TypeScript + Vite
+# Coding Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Build With
 
-Currently, two official plugins are available:
+-   React
+-   TypeScript
+-   Vite
+-   TailwindCSS
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Assumptions
 
-## Expanding the ESLint configuration
+-   Each order consists of at most one drink ordered by every person (number of drinks incremented by one each time)
+-   Coffee prices don't go over $1000
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Input / Instructions
 
-- Configure the top-level `parserOptions` property like this:
+-   Add a coworker for each coworker in the team by using the Add Coworker button
+-   Make an order and specify how much each person's coffee costs by clicking the Add Order button
+-   Look at Next Payer and Amount to determine the person to pay for this order and the cost
+-   Click Pay for Order when the order is paid
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Logic
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+-   We can normalize everyone's spending by averaging the amount each person pays for each drink and then subtracting the amount each person has already spent by that amount
+-   This means the person who has the most negative value has spend the least amount relative to how expensive their drinks were, so they should pay next
