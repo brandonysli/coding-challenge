@@ -39,40 +39,42 @@ const AddOrderPage = () => {
 	};
 
 	return (
-		<div className="p-4">
-			<h1 className="text-xl font-bold mb-4">Add Order</h1>
-			<form onSubmit={handleSubmit} className="space-y-4">
-				{expenses.map((expense, index) => (
-					<div
-						key={expense.name}
-						className="flex justify-between items-center"
+		<div className="flex flex-row justify-center items-start min-h-screen">
+			<div className="flex flex-col justify-center items-center w-full p-4 mt-[100px]">
+				<h1 className="text-xl font-bold mb-4">Add Order</h1>
+				<form onSubmit={handleSubmit} className="space-y-4">
+					{expenses.map((expense, index) => (
+						<div
+							key={expense.name}
+							className="flex justify-between items-center"
+						>
+							<label>{expense.name}</label>
+							<Cleave
+								options={{
+									numeral: true,
+									numeralDecimalScale: 2,
+								}}
+								onChange={(e) => handleCleaveChange(e, index)}
+								value={expense.expense}
+								className="border border-gray-400 rounded p-1 w-16 text-right"
+							/>
+						</div>
+					))}
+					<button
+						type="submit"
+						className="mr-2 mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700"
 					>
-						<label className="mr-4">{expense.name}</label>
-						<Cleave
-							options={{
-								numeral: true,
-								numeralDecimalScale: 2,
-							}}
-							onChange={(e) => handleCleaveChange(e, index)}
-							value={expense.expense}
-							className="input-class-name"
-						/>
-					</div>
-				))}
-				<button
-					type="submit"
-					className="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700"
-				>
-					Submit Orders
-				</button>
-				<button
-					type="button"
-					onClick={() => navigate("/")}
-					className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-700"
-				>
-					Cancel
-				</button>
-			</form>
+						Submit Orders
+					</button>
+					<button
+						type="button"
+						onClick={() => navigate("/")}
+						className="ml-2 bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-700"
+					>
+						Cancel
+					</button>
+				</form>
+			</div>
 		</div>
 	);
 };

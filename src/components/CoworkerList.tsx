@@ -32,11 +32,15 @@ const CoworkerList = () => {
 	return (
 		<div className="w-full p-4">
 			<h1 className="text-xl font-bold mb-4">Coffee Enjoyers!</h1>
-			<div className="divide-y divide-gray-200">
-				{coworkers.map((coworker, index) => (
-					<Coworker key={index} {...coworker} />
-				))}
-			</div>
+			{coworkers && coworkers.length > 0 ? (
+				<div className="divide-y divide-gray-200">
+					{coworkers.map((coworker, index) => (
+						<Coworker key={index} {...coworker} />
+					))}
+				</div>
+			) : (
+				<p>add a coworker to begin...</p>
+			)}
 		</div>
 	);
 };

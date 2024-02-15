@@ -75,7 +75,7 @@ export default function HomePage() {
 					>
 						Pay for Order
 					</button>
-					<div className="text-center p-4 shadow rounded">
+					<div className="flex flex-col justify-between items-center gap-2 text-center p-4 shadow rounded">
 						<h2 className="text-lg font-bold">Next Payer:</h2>
 						<p className="text-md">{determineNextPayer()}</p>
 						<h2 className="text-lg font-bold">Amount:</h2>
