@@ -23,3 +23,7 @@
 
 -   We can normalize everyone's spending by averaging the amount each person pays for each drink and then subtracting the amount each person has already spent by that amount
 -   This means the person who has the most negative value has spend the least amount relative to how expensive their drinks were, so they should pay next
+
+## Note
+
+-   Used React Contexts and local storage instead of creating backend to prevent the need to setup a database locally or host a database on cloud
