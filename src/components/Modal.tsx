@@ -2,16 +2,18 @@ import React, { useState } from "react";
 import { useCoworkers } from "../contexts/CoworkersContext";
 
 interface ModalProps {
+	add: boolean;
 	onClose: () => void;
 }
 
-const Modal = ({ onClose }: ModalProps) => {
-	const { addCoworker } = useCoworkers();
+const Modal = ({ add, onClose }: ModalProps) => {
+	const { addCoworker, deleteCoworker } = useCoworkers();
 	const [name, setName] = useState("");
 
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
-		addCoworker(name);
+		if (add) addCoworker(name);
+		else deleteCoworker(name);
 		setName("");
 		onClose();
 	};
@@ -19,7 +21,9 @@ const Modal = ({ onClose }: ModalProps) => {
 	return (
 		<div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
 			<div className="bg-white p-4 rounded-lg">
-				<h2 className="text-lg font-bold text-black">Add Coworker</h2>
+				<h2 className="text-lg font-bold text-black">
+					{add ? "Add Coworker" : "Delete Coworker"}
+				</h2>
 				<form onSubmit={handleSubmit} className="mt-2">
 					<input
 						type="text"

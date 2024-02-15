@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { useCoworkers } from "../contexts/CoworkersContext";
 
 import Modal from "../components/Modal";
-import DeleteModal from "../components/DeleteModal";
 import CoworkerList from "../components/CoworkerList";
 
 export default function HomePage() {
@@ -53,7 +52,7 @@ export default function HomePage() {
 					>
 						Add Coworker
 					</button>
-					{isModalOpen && <Modal onClose={toggleModal} />}
+					{isModalOpen && <Modal add={true} onClose={toggleModal} />}
 					<button
 						onClick={toggleDeleteModal}
 						className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
@@ -61,7 +60,7 @@ export default function HomePage() {
 						Delete Coworker
 					</button>
 					{isDeleteModalOpen && (
-						<DeleteModal onClose={toggleDeleteModal} />
+						<Modal add={false} onClose={toggleDeleteModal} />
 					)}
 					<button
 						onClick={handleAddOrderClick}
