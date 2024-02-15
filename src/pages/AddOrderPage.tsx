@@ -18,9 +18,7 @@ const AddOrderPage = () => {
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		expenses.forEach(({ name, expense }: ExpenseInput) => {
-			if (expense > 0) {
-				addExpense(name, expense);
-			}
+			addExpense(name, expense);
 		});
 		// add the total cost of order
 		addOrder(expenses.reduce((acc, curr) => acc + curr.expense, 0));

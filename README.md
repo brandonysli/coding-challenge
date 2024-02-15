@@ -8,10 +8,11 @@
 -   TailwindCSS
 
 ## How to run locally
-- Run: ```git clone https://github.com/brandonysli/coding-challenge.git```
-- Then move into the directory: ```cd coding-challenge```
-- Install dependencies: ```yarn install```
-- Start server: ```yarn dev```
+
+-   Run: `git clone https://github.com/brandonysli/coding-challenge.git`
+-   Then move into the directory: `cd coding-challenge`
+-   Install dependencies: `yarn install`
+-   Start server: `yarn dev`
 
 ## Input / Instructions
 
@@ -28,7 +29,7 @@
 ## Logic
 
 -   We can normalize everyone's spending by averaging the amount each person pays for each drink and then subtracting the amount each person has already spent by that amount
--   This means the person who has the most negative value has spend the least amount relative to how expensive their drinks were, so they should pay next
+-   This means the person who has the most negative value has spent the least amount relative to how expensive their drinks were, so they should pay next
 
 ## Note
 
