@@ -30,7 +30,7 @@
 
 ## Logic
 
--   We can normalize everyone's spending by averaging the amount each person pays for each drink and then subtracting the amount each person has already spent by that amount
+-   We can compare everyone's spending by taking the difference between how much they spend for the group and how much their own drinks cost
 -   This means the person who has the most negative value has spent the least amount relative to how expensive their drinks were, so they should pay next
 
 ## Note
