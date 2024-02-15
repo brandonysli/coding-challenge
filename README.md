@@ -1,6 +1,6 @@
 # Coding Challenge
 
-## Build With
+## Built With
 
 -   React
 -   TypeScript
