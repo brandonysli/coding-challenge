@@ -25,7 +25,7 @@ const Modal = ({ onClose }: ModalProps) => {
 						type="text"
 						value={name}
 						onChange={(e) => setName(e.target.value)}
-						className="border p-2 rounded w-full"
+						className="border p-2 rounded w-full bg-black"
 						placeholder="Coworker's Name"
 					/>
 					<button

@@ -56,7 +56,7 @@ const AddOrderPage = () => {
 								}}
 								onChange={(e) => handleCleaveChange(e, index)}
 								value={expense.expense}
-								className="border border-gray-400 rounded p-1 w-16 text-right"
+								className="border border-gray-400 rounded p-1 w-16 text-right bg-gray-600"
 							/>
 						</div>
 					))}

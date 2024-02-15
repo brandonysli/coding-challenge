@@ -81,8 +81,8 @@ export default function HomePage() {
 						<h2 className="text-lg font-bold">Amount:</h2>
 						<p className="text-md">
 							{orders && orders.length > 0
-								? orders[0].cost.toFixed(2)
-								: "0"}
+								? "$" + orders[0].cost.toFixed(2)
+								: "$0.00"}
 						</p>
 					</div>
 					<button
